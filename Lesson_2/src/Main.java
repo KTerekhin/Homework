@@ -6,82 +6,111 @@ public class Main {
     public static void main(String[] args) {
 
         //1
-        int [] arrayTask1 = {0, 0, 0, 1, 1, 1, 0, 1, 1, 0, 1, 0};
-        for (int i = 0; i < arrayTask1.length; i++) {
-            if (arrayTask1[i] == 0) {
-                arrayTask1[i] = 1;
-            } else {
-                arrayTask1[i] = 0;
-            }
-        }
-        System.out.println(Arrays.toString(arrayTask1));
-
+        arrayReplacement();
         //2
-        int [] arrayTask2 = new int[8];
-        for (int i = 1; i <= arrayTask2.length; i++) {
-            arrayTask2[i-1] = (i - 1) * 3;
-        }
-        System.out.println(Arrays.toString(arrayTask2));
-
+        simpleArray2();
         //3
-        int [] arrayTask3 = {1, 5, 3, 2, 11, 4, 5, 2, 4, 8, 9, 1};
-        for (int i = 0; i < arrayTask3.length; i++) {
-            if (arrayTask3[i] < 6) {
-                arrayTask3[i] = arrayTask3[i] * 2;
-            }
-        }
-        System.out.println(Arrays.toString(arrayTask3));
-
+        methodTask3();
         //4
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("Введите размер массива");
-        int arrayTask4Size = scanner.nextInt();
-        int [][] arrayTask4 = new int[arrayTask4Size][arrayTask4Size];
-        for (int i = 0; i < arrayTask4Size; i++) {
-            arrayTask4 [i][i] = 1;
-        }
-        for (int i = 0; i < arrayTask4Size; i++ ) {
-            for (int j = 0; j < arrayTask4Size; j++) {
-                System.out.print(arrayTask4 [i][j] + " ");
-            }
-            System.out.println();
-        }
-        System.out.println(Arrays.toString(arrayTask4));
-
+        methodTask4();
         //5
-        Scanner scanner1 = new Scanner(System.in);
-        int maximum;
-        int minimum;
-        System.out.println("Введите размер массива");
-        int arrayTask5Size = scanner.nextInt();
-        int[] arrayTask5 = new int[arrayTask5Size];
-        System.out.println("Заполните массив значениями");
-        for (int i = 0; i < arrayTask5.length; i++) {
-            arrayTask5[i] = scanner1.nextInt();
-        }
-
-        maximum = arrayTask5[0];
-        minimum = arrayTask5[0];
-
-        for (int i = 1; i < arrayTask5.length; i++) {
-            if (arrayTask5[i] < minimum) {
-                minimum = arrayTask5[i];
-            } else { minimum = minimum; }
-        }
-
-        for (int i = 1; i < arrayTask5.length; i++) {
-            if (arrayTask5[i] > maximum) {
-                maximum = arrayTask5[i];
-            } else { maximum = maximum; }
-        }
-
-        System.out.println("Минимальное значение массива равно " + minimum);
-        System.out.println("Максимальное значение массива равно " + maximum);
-
+        arrayMinMaxValue();
         //7
         array7Offset();
     }
 
+        //1
+        static void arrayReplacement() {
+            Scanner scanner = new Scanner(System.in);
+            System.out.println("Введите длину массива");
+            int array1Size = scanner.nextInt();
+            int [] arrayTask1 = new int[array1Size];
+            System.out.println("Заполните массив значениями 0 и 1");
+            for (int i = 0; i < array1Size; i++) {
+                arrayTask1[i] = scanner.nextInt();
+            }
+            for (int i = 0; i < arrayTask1.length; i++) {
+                if (arrayTask1[i] == 0) {
+                    arrayTask1[i] = 1;
+                } else {
+                    arrayTask1[i] = 0;
+                }
+            }
+            System.out.println(Arrays.toString(arrayTask1));
+        }
+
+        //2
+        static void simpleArray2() {
+            int [] arrayTask2 = new int[8];
+            for (int i = 1; i <= arrayTask2.length; i++) {
+                arrayTask2[i-1] = (i - 1) * 3;
+            }
+            System.out.println(Arrays.toString(arrayTask2));
+        }
+
+        //3
+        static void methodTask3() {
+            int [] arrayTask3 = {1, 5, 3, 2, 11, 4, 5, 2, 4, 8, 9, 1};
+            for (int i = 0; i < arrayTask3.length; i++) {
+                if (arrayTask3[i] < 6) {
+                    arrayTask3[i] = arrayTask3[i] * 2;
+                }
+            }
+            System.out.println(Arrays.toString(arrayTask3));
+        }
+
+        //4
+        static void methodTask4() {
+            Scanner scanner = new Scanner(System.in);
+            System.out.println("Введите размер массива");
+            int arrayTask4Size = scanner.nextInt();
+            int [][] arrayTask4 = new int[arrayTask4Size][arrayTask4Size];
+            for (int i = 0; i < arrayTask4Size; i++) {
+                arrayTask4 [i][i] = 1;
+            }
+            for (int i = 0; i < arrayTask4Size; i++ ) {
+                for (int j = 0; j < arrayTask4Size; j++) {
+                    System.out.print(arrayTask4 [i][j] + " ");
+                }
+                System.out.println();
+            }
+            System.out.println(Arrays.toString(arrayTask4));
+        }
+
+        //5
+        static void arrayMinMaxValue() {
+            Scanner scanner = new Scanner(System.in);
+            int maximum;
+            int minimum;
+            System.out.println("Введите размер массива");
+            int arrayTask5Size = scanner.nextInt();
+            int[] arrayTask5 = new int[arrayTask5Size];
+            System.out.println("Заполните массив значениями");
+            for (int i = 0; i < arrayTask5.length; i++) {
+                arrayTask5[i] = scanner.nextInt();
+            }
+
+            maximum = arrayTask5[0];
+            minimum = arrayTask5[0];
+
+            for (int i = 1; i < arrayTask5.length; i++) {
+                if (arrayTask5[i] < minimum) {
+                    minimum = arrayTask5[i];
+                } else { minimum = minimum; }
+            }
+
+            for (int i = 1; i < arrayTask5.length; i++) {
+                if (arrayTask5[i] > maximum) {
+                    maximum = arrayTask5[i];
+                } else { maximum = maximum; }
+            }
+
+            System.out.println("Минимальное значение массива равно " + minimum);
+            System.out.println("Максимальное значение массива равно " + maximum);
+        }
+
+
+        //7
         static void array7Offset() {
             Scanner scanner2 = new Scanner(System.in);
             System.out.println("Введите размер массива");
